@@ -11,7 +11,7 @@ function PlayArea(){
         <>
         <Routes>
             <Route path='/' element={<ChoosingStep setChoice={setChoice}/>}/>
-            <Route path='/game' element={<Game setChoice={setChoice} choice={choice}/>}/>
+            <Route path='/game' element={<Game choice={choice}/>}/>
 
 
 
