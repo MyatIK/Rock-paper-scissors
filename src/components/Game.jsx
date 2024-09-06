@@ -88,32 +88,45 @@ function Game({choice}){
 
     return(
 
-        <div className="h-[calc(100vh-14rem)] flex flex-row gap-40 justify-center text-white font-bold mt-10">
-            <div>
-                <p className="mb-10 flex justify-center text-xl">YOU PICKED</p>
-                <div className='h-40 w-40 rounded-full absolute z-10'>
-                    <Button src={userChoice} main={main} secondary={secondary}/>
+        <div className="h-[calc(100vh-14rem)] text-white font-bold mt-10 w-full p-5 md:w-4/5">
+            <div className="flex flex-row gap-20 justify-center">
+                <div className="md:w-1/5 ">
+                    <p className="mb-10 text-md md:text-xl flex justify-center">YOU PICKED</p>
+                    <div className='h-40 w-40 rounded-full absolute z-10 ml-5'>
+                        <Button src={userChoice} main={main} secondary={secondary}/>
+
+                    </div>
+                    
 
                 </div>
-                
+                {result && 
+                <div className="md:w-1/5 hidden md:block">
+                    <p className="md:text-3xl text-xl flex justify-center mt-16">{result}</p>
+                    <div className="border border-white rounded-md p-3 mt-10 flex justify-center hover:text-black hover:bg-slate-200" onClick={handleClick}>Play Again</div>    
+                </div>}
 
-            </div>
-            {result && 
-            <div>
-                <p className="flex justify-center text-4xl">{result}</p>
-                <div className="border border-white rounded-md p-3 mt-10 flex justify-center" onClick={handleClick}>Play Again</div>    
-            </div>}
+                <div className="md:w-1/5">
+                    <p className="mb-10 flex justify-center text-md md:text-xl">THE HOUSE PICKED</p>
+                    <div className='h-40 w-40 flex jusstify-center  rounded-full absolute z-10 ml-5'>
+                        <Button src={computer} main={mainComp} secondary={secondaryComp}/>
 
-            <div>
-                <p className="mb-10 flex justify-center text-xl">THE HOUSE PICKED</p>
-                <div className='h-40 w-40  rounded-full absolute z-10'>
-                    <Button src={computer} main={mainComp} secondary={secondaryComp}/>
+                    </div>
+                    
+                    
 
                 </div>
-                
-                
 
             </div>
+            
+            <div className="w-full p-5 mt-20">
+                {result && 
+                <div className="w-full p-5 md:hidden block">
+                    <p className="text-4xl  flex justify-center mt-16">{result}</p>
+                    <div className="border border-white rounded-md p-3 mt-10 flex justify-center hover:text-black hover:bg-slate-200" onClick={handleClick}>Play Again</div>    
+                </div>}
+
+            </div>
+            
 
         
         </div>

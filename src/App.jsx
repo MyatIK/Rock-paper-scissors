@@ -18,7 +18,7 @@ function App() {
     
 
     <div className="min-h-screen bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-cyan-950 to-indigo-900 relative">
-      <div className="pt-10 grid place-items-center h-screen">
+      <div className="p-5 md:pt-10 grid place-items-center h-screen">
         <ScoreBoard/>
         <Routes>
             <Route path='/' element={<ChoosingStep setChoice={setChoice}/>}/>
@@ -30,7 +30,7 @@ function App() {
         
         
         
-        <div className="absolute bottom-10 right-10 border border-slate-200 rounded-md text-white w-20 text-sm h-10 grid items-center justify-center" 
+        <div className="absolute bottom-10 right-50 md:right-10 border border-slate-200 rounded-md text-white w-20 text-sm h-10 grid items-center justify-center" 
           onClick={handleClick}>
             RULES
         </div>
